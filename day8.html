@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="d1">
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p22"></p>
+    <p id="p3">You Can Get Me:From P3 to p4</p>
+    <p id="p4"></p>
+    <p id="2"></p>
+    <input type="" name="" id="inp1">
+    <input type="" name="" id="inp2">
+
+    <div id="d2">
+        <p class="c1">This is class example one</p>
+        <p class="c1">This is class example two</p>
+
+
+    </div>
+
+</div>
+    
+    <script>
+        // Dom(Document Object modules)
+        document.getElementById("p1").innerHTML="Hello welcome Here";
+        document.getElementById("p2").innerHTML="<a href=''>Click Here</a>";
+        document.getElementById("p22").innerText="<a href=''>Click Here</a>";
+
+        let word= document.getElementById("p3").textContent //we can take a
+        console.log(word)
+        document.getElementById("p4").innerHTML=word;  //with this innerhtml you can update the contant and create the cantant
+
+        // Create Html Tag
+        let newP=document.createElement("p")
+        newP.innerHTML="Created Tag"
+        document.getElementById("d1").appendChild(newP)
+
+        // Before methods
+        // if u want so print it in certain place use before and after methods
+        document.getElementById("d1").before(newP,document.getElementById("p3"))
+
+        // Styles using js
+        document.getElementById("p3").style.fontSize="40px"  //u can add style by using .style methods here
+        document.getElementById("inp1").placeholder="Enter your name"  //and u can add attributes by using .and attributes
+        document.getElementById("inp2").type="color" //we can change the input type also here using .type
+
+        // Collection and Nodes
+        let idEx=document.getElementById("p1")
+        let classEx=document.getElementsByClassName("c1")
+        console.log(classEx)
+        console.log(classEx[0].textContent)
+        console.log(classEx[1].textContent)
+
+        console.log(idEx)
+        console.log(idEx.textContent)
+
+        // BOM(Browser Object Module)
+        // Screen, Navigator, History, Alert, Confirm, Prompt, Location
+        // Screen -- screen height and width when minimize and maximize
+        // navigator --whenever u enter into an new website to check whather cookies accept or decline(enable or disable)
+        // History -- reload the pages, go back to the pages,forward the page(example:after the validation reload the page)
+        // Alert,Confirm,Prompt --tost message popup message,error purpose and positive response
+        // Alert-- only one button if u click one the the page will load
+        // Confirm-- it will come two buttons okay or cancel
+        // Prompt --it will used to take a input value from html
+        // Location --it should navigate the pages in javascript ,url entiry path, and check url is protected or not
+        // port -- if one port is running it can't allow another port
+
+        // Screen
+        console.log(window.screen.availWidth) //Screen is used for show screen height and width
+
+        // Navigator
+        // in browser object module window is a key word like(document) but it's optional
+        console.log(window.navigator.cookieEnabled)
+
+        // History
+        // history.back()
+        // history.pushState()
+        
+        // Toast message Type
+        // Alert
+        alert("User Page Is Loading")
+        
+        // confirm
+        // when u declare a variabel and then the confirm variable will show in boolean format
+        let cnf=confirm("Are You Sure To Load")
+        console.log(cnf)  
+
+        // Prompt
+        // i will pop up the input tag
+        // we can enter any value and any data type
+        let value=prompt("Enter the Value : ")
+        console.log(value)
+
+        // Location
+        // location.href="https://www.google.com"  //when we give href= that will navigate to the link whichever link we give
+        console.log("Location : ",location.href)
+        console.log("Port : ",location.port)
+        console.log("Host : ",location.host) //with port name is host
+        console.log("HostName :",location.hostname) //without host is hostname
+        console.log("PathName : ",location.pathname) // everthing comes after port is a path 
+
+
+    </script>
+</body>
+</html>

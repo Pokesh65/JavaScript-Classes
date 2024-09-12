@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+    <input type="text" id="inp1" onchange="inptext(this)"/>
+    <button id="btn1" onclick="textshow()" ondblclick="texthide()">Press Here</button>
+    <br>
+    <br>
+    <p>Event Listener</p>
+    <p id="ep1"></p>
+    <p id="ep2"></p>
+
+    <input type="text" name="" id="inp2">
+    <button id="ebtn1">Even Btn</button>
+    <script>
+        // Event handling
+        function textshow(){
+            document.getElementById("p1").innerHTML="Hello welcome "
+            document.getElementById("btn1").innerHTML="double click"
+            document.getElementById("p2").innerHTML=word
+
+
+        }
+        function texthide(){
+            document.getElementById("p1").innerHTML=""
+            document.getElementById("btn1").innerHTML="Press Here"
+            document.getElementById("p2").innerHTML=""
+        }
+        let word;
+        function inptext(e){
+            console.log(e.value)
+            word=e.value
+            // document.getElementById("p2").innerHTML=e.value
+            
+        }
+        
+        // EventListener
+        // EventListener called javascript
+        // in eventlistener on change we cant use this inside onchange 
+        
+        document.getElementById("ebtn1").addEventListener("click",evenlinstenertxt)
+        document.getElementById("ebtn1").addEventListener("dblclick",eventHide)
+        document.getElementById("inp2").addEventListener("change",eventInput)
+
+        function evenlinstenertxt(){
+            document.getElementById("ep1").innerHTML="Hello Even Listener Welcome"
+            document.getElementById("ep2").innerHTML=letter
+            fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => { //if we want to use more than one element in arrow function use curlybrases
+                // document.getElementById("ep2").innerHTML=json.title
+                document.getElementById("ep2").innerHTML=JSON.stringify(json)
+
+            });
+            // POST API
+                fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                })
+                .then((response) => response.json())
+                .then((json) => {
+                    if(json.title=="foo"){
+                        window.location.href="https://www.youtube.com"
+                    }else{
+                        alert("Invalid Response")
+                        window.location.href="https://www.google.com/maps"
+                    }
+                });// Here is all your work must do after the arrow function{inside},u should write the code
+                // to where your response should show 
+
+        }
+
+        // for get api we don't need to use get cause get api is default methods
+        // but for the post api we need to use mathod post, and we can pass our data to the body
+        function eventHide(){
+            document.getElementById("ep1").innerHTML=""
+        }
+        // here we have to use v.target.value to get value
+        let letter;
+        function eventInput(v){
+            console.log(v.target.value)
+            letter=v.target.value
+            
+
+
+
+        }
+        // Request Methods(Get,Post,Put,delete)
+        // Status code(2series positive response,4series business error,503coding error(internal server error))
+        // 200 success
+        // 201 new data created 
+        // 400 bad request (back-end error throw)
+        // 401 unarthorized error 
+        // 404 not founded(when they don't habe api that u called)
+        // 503 internal server error(code mistake)
+
+    </script>
+</body>
+</html>

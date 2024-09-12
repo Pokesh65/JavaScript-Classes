@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>The Demo Values Declared here:</p>
+    <p id="Demo"></p>
+
+    <!-- array -->
+    <p id="ar" style="color: purple;"></p>
+
+    <!-- object -->
+    <p id="ob"></p>
+
+    <!-- ternary operator  -->
+    <p id="ter"></p>
+
+    <!-- for Loop -->
+    <p id="fo"></p>
+
+    <!-- set time Out -->
+    <p id="tmo"></p>
+
+    <!-- Set time out and clear time out  -->
+     <p id="sac" class="sac"></p>
+    <style>
+        .sac{
+            background:linear-gradient(to top,black,crimson,white);
+            color: transparent;
+            background-clip:text;
+            font-size: xx-large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+
+    <script>
+        x = 3;
+        y = 4;
+        z = x + y;
+        document.getElementById("Demo").innerHTML = "<h3 style=color:crimson;>Hello</h3>"
+
+        arry = ["Pokesh", 23, "Malligaa", 20,]
+        arry[4] = "Kalai"
+        arry[5] = 19
+        arry[1] = 20
+        document.getElementById("ar").innerHTML = "<p>This Is array arry</p>" + arry
+
+        let obj = {
+            name: "Pokesh",
+            age: 22
+        }
+        obj["obligation"] = "Student"
+        document.getElementById("ob").innerHTML = "hello " + obj.age + "  " + obj.name + obj.obligation
+
+        // ternary operator
+        let Str = "The answer Will be Updated Here"
+        1 > 5 ? Str = "The answer Is Above Five" : Str = "Answer is Below Five";
+        // document.getElementById("ter").innerHTML = Str
+        document.write(Str)
+
+        //for loop
+        let j = 10;
+        for (i = 0; i < j; i++) {
+            var fl = [i]
+            let fll = ""
+            fll = [...fll + fl]
+            console.log(fll, ...fll)
+
+        }
+
+
+        // hey="hello from loop"
+        // document.getElementById("fo").innerHTML=
+
+        const print = [20, 23, 25, 17, 23, 45, 6, 5, 4, 7, 6, 67,];
+        const [malli, Pokesh, ...Others] = print;
+        document.write("malli " + malli + " ");
+        document.write("pokesh" + Pokesh + " ")
+        document.write("Others age: " + Others)
+
+        //   while loop
+        age = 22;
+        studentAge = 20
+        while (age > studentAge) {
+            document.write("must be join a job", age + ".  .")
+            age--
+
+        }
+
+        // setTimeout(()=>{
+        //     for(let i=0;i<10; i++){
+        //         document.getElementById("tmo").innerHTML=i
+        //     console.log(i)
+        //     }
+        // },5000);
+
+        setInterval(() => {
+            console.log("Set Interval Started...")
+            for (let i = 10; i < 13; i++) {
+                document.getElementById("tmo").innerHTML = i
+                console.log(...i, i)
+            }
+        }, 7000);
+
+
+        // set time out and clear time out 
+        console.log("Set Time Out And Clear Time Out")
+
+        function myGreeting() {
+            // console.log("Happy Birthday")
+            document.getElementById("sac").innerHTML="Hiii There Buddies"
+        }
+        const myTimeout = setTimeout(myGreeting, 6000);
+
+        //   clearTimeout(myTimeout,10000);
+
+        console.log(new Date())
+
+    </script>
+</body>
+
+</html>

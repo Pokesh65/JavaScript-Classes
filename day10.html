@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- jquary used for dom elements document.getElementById -->
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2">It's already there</p>
+    <script>
+        // this is a jquery to use dom elements
+        $(document).ready(function(){
+            $("#p1").text("This is a added Jquery")
+        })
+        // here this text methods are two types are there
+        // the one is if u want to edit a content from p tag you can enter a content into text
+        // and if u want to display a content fron p tag u can only use text methods only
+        console.log($("#p2").text())
+        $("#p1").css("font-size","50px")
+        $("#p2").css("color","blue")
+    </script>
+</body>
+</html>
+<!-- You need to complete 2 more video from javaScript Folder-->
