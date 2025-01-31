@@ -1,29 +1,32 @@
 // Iteration
 
-let arr1=[3,4,5,6,7,8,10]
+let arr1=[3,4,5,6,7,8,10,3]
 
 // Map
 let foreEx=arr1.forEach((e,i,n)=>{ 
     // we can print each value in separate
-    //u can add each value and console it in foreach 
+    // u can add each value and console it in foreach 
     // foreach only used for iterate the value
+    // forEach methods calls a function for each element in an array
     console.log(e+5)
     console.log("Index :",i)
-    console.log("Number :",n)
+    // console.log("Array :",n)
     return e+5
 
 })
 console.log(foreEx)
 
+console.log("Map Method Started...")
 // we can use map whenever we need to update each value of an array, and it's suits for string and numbers asloo
 let MapEX=arr1.map((e)=>{  //map can create a new array based on the function but doesn't affect real one 
+
     return e+5
 
 })
 console.log(MapEX)
 console.log(arr1)
 
-let MapEX1=arr1.map((e,i)=>{  
+let MapEX1=arr1.map((e,i,a)=>{  
     console.log("Array value : "+e) //this indicate the value of an array
     console.log("Index value : "+i) //and this one indicate the index value of array
     return e+=" Hello Pokes" //it will only take first declared return only
@@ -36,14 +39,14 @@ console.log("Map : ",MapEX1)
 console.log("Map example two Start")
 // while using map it will go as nested array 
 let flatex=arr1.map((e)=>{
-    return[e*2,e*4]
+    return [e*2,e*4]
 
 })
 console.log(flatex)
 
 // flat map
 console.log("FlatMap example Start")
-// the flat map it will print every value in a single array format 
+// the flatmap it will print every value in a single array format 
 let flatamp=arr1.flatMap((e)=>{
     // it will multiple value from two different mutiplication
     return[e*2,e*4]
@@ -57,7 +60,6 @@ console.log("Filter methods Starts")
 let FilterEX1=arr1.filter((e,i)=>{   //filter can push the value to array which condition is satisfied(push element  to array only if its true )
     console.log("Filter value from arry",e) //this indicate the value of an array
     console.log("Filter value from arry's Index value",i) //and this one indicate the index value of array
-   
     return e>5
 
 })
@@ -65,8 +67,8 @@ console.log("Filter E>5 : ",FilterEX1)
 
 // Find
 let findex=arr1.find((e,i)=>{ //find will findout the condition is satisfied with the array value or not , if it's satisfied it will stop
-    // in find and filter u can use only logical operators only
-    console.log(e>5,"array",e,"index",i)
+    // in find and filter u can use only comparision operators only
+    console.log(e>5,"array",e,">5","index",i)
     return e>5
    
 
@@ -76,7 +78,7 @@ console.log("Find Methods : ",findex)
 // some 
 let someex=arr1.some((e,i)=>{
     // it will give true if any one of the array elements is satisfied the condtion, otherwise print false
-    return e>5
+    return e>4
 
 })
 console.log("Some Methods : ",someex)
@@ -92,7 +94,7 @@ let everyex=arr1.every((e,i)=>{
 console.log("Every Methods : ",everyex)
 
 // some inside of the filter
-let filterex2=arr1.filter((e,i)=>{
+let filterex2=arr1.filter(()=>{
     return someex //it will show you all the value from someex
 })
 console.log("Some Inside",filterex2)
@@ -144,18 +146,22 @@ console.log(MapE.get("name2"))
 // MapE.clear()
 console.log(MapE.has("name1")) //has can only check the key if it here or not(output will be true or false)
  
-// Now we are going to check the values of the key by suing the advance for loop
+// Now we are going to check the values of the key by using the advance for loop
 // MapE.values is inbuild methods 
+// console.log(MapE.keys())
+// console.log(MapE.values())
 for(let obj of MapE.values()){
+    
     if(obj == "Gnash"){
     console.log("advance For loop : ",obj)
     break
     }
-    // console.log(obj)
+    console.log(obj)
 }
 
+console.log("Key Methods Started Here")
 // MapE.key is inbuild
-// in big Map methods we can only access the key by using getmthods
+// in big Map methods we can only access the key by using getmethods
 
 for(let obj1 of MapE.keys()){
     // console.log(obj1)
@@ -173,9 +179,5 @@ for(let obj1 of MapE.keys()){
 // deleting any one key from this object we can use delete methods
 // using this object we can delete particular key wherelse in normal object we cant delete a particular key
 MapE.delete("name1")
+MapE.delete("name2")
 console.log(MapE)
-
-
-
-
-

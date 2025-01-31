@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- JavaScript Events Type
+ 
+1.mousemove
+it fires repeatedly when you move the mouse cursor around the evements
+
+2.mousedown
+event fires when you press the mouse button on the element
+
+3.mouseup
+event fires when you release the mouse button on the elements
+
+4.mouseover
+Event Fires when the mouse cursor move from the outside to inside the boudaries of the elements
+
+5.mouseout
+event fire when the mouse cursor is over an elements and then moves to another elements
+
+6.keydown
+event fires when you press a key on the keyboard & fires repeatedly while you holing down the elements
+
+7.keyup
+elements fires when you release a key on the keyboard
+
+8.keypress
+event fire when you press a charactor on the keyboard like a,b,c... 
+it fire repeatedly while you hold on the key board
+
+9.scroll
+Event fires when you scroll a document or and element,the scroll event fire -->
+
+    <label for="btn1">1.mousemove :</label>
+    <button type="button" id="btn1">mousemove</button>
+    <p>it fires repeatedly when you move the mouse cursor around the evements</p>
+    <br></br>
+
+    <label for="btn2">2.mousedown :</label>
+    <button type="button" id="btn2">mousedown</button>
+    <p>event fires when you press the mouse button on the element</p>
+    <br></br>
+
+
+    <label for="btn3">3.mouseup :</label>
+    <button type="button" id="btn3">mouseup</button>
+    <p>event fires when you release the mouse button on the elements</p>
+    <br></br>
+
+
+    <label for="btn4">4.mouseover :</label>
+    <button type="button" id="btn4">mouseover</button>
+    <p>Event Fires when the mouse cursor move from the outside to inside the boudaries of the elements</p>
+    <br></br>
+
+
+    <label for="btn5">5.mouseout :</label>
+    <button type="button" id="btn5">mouseout</button>
+    <p>event fire when the mouse cursor is over an elements and then moves to another elements</p>
+    <br></br>
+
+
+    <label for="btn6">6.keydown :</label>
+    <button type="button" id="btn6">keydown</button>
+    <p>event fires when you press a key on the keyboard & fires repeatedly while you holing down the elements</p>
+    <br></br>
+
+
+    <label for="btn7">7.keyup :</label>
+    <button type="button" id="btn7">keyup</button>
+    <p>elements fires when you release a key on the keyboard</p>
+    <br></br>
+
+
+    <label for="btn8">8.keypress :</label>
+    <button type="button" id="btn8">keypress</button>
+    <p>event fire when you press a charactor on the keyboard like a,b,c...
+        it fire repeatedly while you hold on the key board</p>
+    <br></br>
+
+
+    <label for="btn9">9.scroll :</label>
+    <button type="button" id="btn9">scroll</button>
+    <p>Event fires when you scroll a document or and element,the scroll event fire </p>
+    <br></br>
+
+
+    <script>
+        function CallAll() {
+            console.log("You are calling meee Broooo")
+        }
+
+        function KeyAll() {
+            console.log("You are calling Keyyyyy meee Broooo")
+        }
+
+        function AllkeyPress() {
+            console.log("Hey buddy im calling whenever you press any key on keyboard")
+        }
+
+        function Domscroll() {
+            console.log("Sroll more I will come More")
+        }
+
+        // 1.mousemove
+        let mmove = document.getElementById("btn1");
+        mmove.addEventListener('mousemove', CallAll)
+
+        // 2.mousedown
+        let mdown = document.getElementById("btn2");
+        mdown.addEventListener('mousedown', CallAll)
+
+        // 3.mouseup
+        let mup = document.getElementById("btn3");
+        mup.addEventListener('mouseup', CallAll)
+
+        // 4.mouseover
+        let mover = document.getElementById("btn4");
+        mover.addEventListener('mouseover', CallAll)
+
+        // 5.mouseout
+        let mout = document.getElementById("btn5");
+        mout.addEventListener('mouseout', CallAll)
+
+        // 6.keydown
+        let kdown = document.getElementById("btn6");
+        kdown.addEventListener('keydown', CallAll)
+
+        // 7.keyup
+        let kup = document.getElementById("btn7");
+        kup.addEventListener('keyup', KeyAll)
+
+        // 8.keypress
+        let kpress = document.getElementById("btn8");
+        kpress.addEventListener('keypress', AllkeyPress)
+        // 9.scroll
+        window.addEventListener('scroll',Domscroll)
+
+        // this will show use the scroll position on the page
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY; // Vertical scroll position
+            console.log(`Scrolled to: ${scrollTop}px`);
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

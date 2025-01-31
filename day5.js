@@ -4,6 +4,20 @@
 
 // Star pattern print
 
+let st=""
+let ct=1
+for(i=0;i<3;i++){
+    for(j=0;j<ct;j++){
+        st+="*"
+       
+    }
+    st+="\n"
+    ct+=5
+}
+console.log(st)
+
+
+
 let star=""
 for( i=0;i<3;i++){
     for(j=0;j<5;j++){
@@ -35,7 +49,7 @@ let count=1
 
 for( i=0;i<3;i++){
     for(j = 0; j < count; j++){
-        result+="*"
+        result+="*" 
 
     }
     result+="\n"
@@ -45,7 +59,7 @@ console.log(result)
 
 // 2nd methods 
 console.log("2nd Without if Condition Star print...")
-let res=""
+let res="";
 
 
 for( i=0,z=1;i<3;i++){
@@ -88,21 +102,22 @@ for(let word of sTa){
     console.log()
     for(let letter of word){
         console.log(letter)
-        if(letter=="H"){
+        if(letter=="e"){
             console.log(word+"--"+word.indexOf(letter))
-            console.log(word)
+            // console.log(word)
 
             // if you want to break this condition use return instead of break
             // break; this break doesn't work on for loop
             // you can use Return Instead of break
-            // return;
+            // return word;
             break;
         }
     }
 }
 
+console.log("...3rd Problem...")
 // 3rd Problem 
-// let prime=11
+// let prime=13
 // let isprime=true
 // for(let i = 2; i < prime; i++){
 //     if(prime%i==0){
@@ -114,7 +129,7 @@ for(let word of sTa){
 // }
 // console.log(isprime)
 // if(isprime){
-//     console.log("This is Prime Number",isprime)
+//     console.log("This is Prime Number",isprime,prime)
 // }
 
 
@@ -123,13 +138,13 @@ let isprime=true
 for(let i = 2; i < prime; i++){
     if(prime%i==0){
         isprime=false
-    console.log("This is not prime number",prime,i,isprime)
-
-    
-    }else{
-        console.log("This is Prime Number",isprime)
+     console.log("This is not prime number",prime,i,isprime)
     }
-    console.log(isprime)
+} 
+console.log(isprime)
+if(isprime){
+    console.log("This is Prime Number",isprime,prime)
 }
+// console.log(isprime)
 
 

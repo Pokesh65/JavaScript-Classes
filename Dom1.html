@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- TextContent -->
+    <ul class="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Service</li>
+        <li style="display: none;">Contact</li>
+    </ul>
+
+    <h1 id="Di1">Donesh</h1>
+
+    <!-- innerHtml  -->
+    <ul id="menuIH">
+        <li>Home</li>
+        <li>About</li>
+        <li>Service</li>
+    </ul>
+
+
+    <!-- Append Child -->
+     <h3 id="h3">Append Child</h3>
+
+      <!-- prepend Child -->
+      <h3 id="p3">prepand Child</h3>
+
+      <!-- InsertAdjacentHtml() -->
+       <ul class="iahtml">
+        <li>Hello IASHTml</li>
+        <li>About IASHTml</li>
+        <li>Contact IASHTml</li>
+       </ul>
+
+       <!-- replaceChild() -->
+        <ul id="repChild">
+                <li id="repCh1">Pokesh</li>
+                <li>adhi</li>
+                <li>Mallii</li>
+        </ul>
+
+        <!-- InsertBrfore -->
+         <ul id="insetB">
+                <li>One</li>
+                <li>two</li>
+                <li>Three</li>
+         </ul>
+
+
+<!-- Attribute methods -->
+         <input type="text" placeholder="Enter your name" id="inp1">
+
+<!-- Manipulating Elements Styles -->
+
+         <input type="text" id="inp2" class="firstInp" placeholder="Style" style="background-color: aquamarine; width:20vw;">
+
+         <!-- cssText  -->
+         <input type="text" id="inp3" placeholder="hello" style="background-color: yellow; color: red; width: 20vw; height: 20vh;">
+
+
+
+    <script>
+
+
+
+
+
+// TextContent
+        
+        let menu = document.querySelector(".menu");
+        // it will show all the content inside the menu elements child node value
+        console.log(menu.textContent)
+        console.log(menu.innerText)  
+        // this will only show the contect which are in the ul but i will check css propeties also
+
+// innerHtml
+
+        let ul1=document.getElementById("menuIH");
+        ul1.innerHTML="<h2>Pokesh</h2>";
+
+// After methods
+
+        ul1.after(document.getElementById("Di1"),"Hello You","All are Fine");
+
+// Appent()
+        // parent.append(newNode);
+        let child1=document.getElementById("h3")
+        ul1.append(child1)
+        console.log(ul1)
+
+// Prepand()
+        let pre=document.getElementById("p3")
+        ul1.prepend(pre)
+        console.log(ul1)
+        
+// InsertAdjacentHtml()
+
+        let ias=document.querySelector(".iahtml");
+        console.log(ias)
+        ias.insertAdjacentHTML("afterbegin","<li>im new here</li>");
+        ias.insertAdjacentHTML("beforebegin","<h2>See My List</h2>");
+        ias.insertAdjacentHTML("beforeend","<li>im last child</li>");
+        ias.insertAdjacentHTML("afterend","<h2>Im Out</h2>");
+
+// ReplaceChild
+        let repChild=document.getElementById("repChild");
+        console.log(repChild)
+        let chi1=repChild.firstElementChild
+        let newLi=document.createElement("li");
+        newLi.innerText="Im new Here From SomeWhere"
+        console.log(newLi)
+        repChild.replaceChild(newLi,chi1)
+        console.log(repChild)
+
+// CloneNode();
+        console.log(" CloneNode");
+        let newClone=newLi.cloneNode(true);
+        console.log(newClone)
+        // write true then only it will give all the value inside the clone
+
+// RemoveChild
+        let ReChild=document.getElementById("repChild");
+        console.log(ReChild)
+        ReChild.removeChild(ReChild.firstElementChild);  //it will remove the FirstChild
+        console.log(ReChild)
+
+// InsertBefore
+        let insbefore=document.getElementById("insetB");
+        console.log(insbefore.textContent)
+        let onechild=insbefore.firstElementChild;
+        let newZero=document.createElement("li");
+        newZero.innerText="zero"
+        console.log(newZero)
+        console.log(onechild)
+        insbefore.insertBefore(newZero,onechild);
+        console.log(insbefore)
+
+
+// Attribute Methods
+        let att=document.getElementById("inp1");
+        // this will show all the attributes which are used inbuild in elements
+        console.log(att.attributes);
+        console.log(att.getAttribute("id"));
+        console.log(att.getAttribute("placeHolder"))
+
+        // Set Attributes
+        att.setAttribute("placeHolder","Enter Your Gf name")
+
+        // has Attributes
+        console.log(att.hasAttribute("type")) //true
+        console.log(att.hasAttribute("style")) //false
+
+        // RemoveAttributes
+        console.log(att.attributes)
+        att.removeAttribute("id")
+        console.log(att.attributes)
+
+// Manipulating Elements Styles
+        let inp2=document.getElementById("inp2");
+        console.log(inp2.style)
+
+        // Get Style
+        console.log(inp2.style.backgroundColor)
+        console.log(inp2.style.width)
+        console.log(inp2.style.height)
+
+        // set Style
+        inp2.style.padding="40px";
+        inp2.style.backgroundColor="olive";
+        inp2.style.color="white";
+
+        // Csstext
+        let inp3=document.getElementById("inp3")
+        console.log(inp3.style.backgroundColor)
+        // inp3.style.cssText="height:30vw"
+
+        // if i want to write style without overriding i need to use cancatenate
+        inp3.style.cssText+="border-radius:40px;"
+
+        // getComputedStyle
+        console.log(window.getComputedStyle(inp3));
+        console.log(window.getComputedStyle(inp3).backgroundColor);
+        console.log(window.getComputedStyle(inp3).fontSize);
+        console.log(window.getComputedStyle(inp3).border);
+        console.log(window.getComputedStyle(inp3).height);
+        console.log(window.getComputedStyle(inp3).width);
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

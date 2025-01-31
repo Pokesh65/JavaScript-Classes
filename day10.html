@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- you need to get the link from jquery cdn link  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- jquary used for dom elements document.getElementById -->
 </head>
@@ -13,14 +14,17 @@
     <script>
         // this is a jquery to use dom elements
         $(document).ready(function(){
-            $("#p1").text("This is a added Jquery")
+            // in this function only we can use Jquery syntax,outside of the fucntion we can't use the jquery function
+            $("#p1").text("This is a added From Jquery")
+            console.log($("#p1").text())
         })
         // here this text methods are two types are there
-        // the one is if u want to edit a content from p tag you can enter a content into text
-        // and if u want to display a content fron p tag u can only use text methods only
-        console.log($("#p2").text())
-        $("#p1").css("font-size","50px")
-        $("#p2").css("color","blue")
+        // the one is if u want to edit a content from p tag you can enter a content into .text("")
+        // and if u want to display a content fron p tag u can only use .text() methods only
+        console.log($("#p1").text())//here we call Id so we need to use # before Id name("#p1")
+        $("#p1").css("font-size","50px").css("color","white").css("border","1px solid purple").css("backgroundColor","olive").css("border-radius","40px");
+        $("#p2").css("color","darkgreen").css("backgroundColor","olive");
+        
     </script>
 </body>
 </html>

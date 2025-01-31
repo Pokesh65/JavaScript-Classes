@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .colorChnage{
+            background-color: teal;
+            border: 1px solid orangered;
+            width: 20vw;
+            height: 10vh;
+        }
+        .new{
+            color: chartreuse;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+    <!-- Java Scripts Events 
+    events is an action that occurs in your web browsers -->
+
+    <div id="div1">
+        <button type="button">Click</button>
+    </div>
+
+    <!-- Event Bubbling
+    Event Bubbling is a Event start at the most specific elements and flows 
+    torwards to the least specific Elements of the Dom  -->
+
+    <!-- Event Capturing
+    event Capturing is a event start from the least specific 
+    elements and flows torwards to the most specific elements of the dom -->
+
+    <!-- The event handler is a pieces of code that will be executed when the event is called -->
+
+    <!-- There are three type of event handlers are there -->
+
+     <!-- 1.Attributes Event handler -->
+    <label>Attribute Function</label>
+     <button type="button" onclick="console.log('You Just Hit That Attri Button')">Attri Button</button>
+    <button type="button" id="btn1" onclick="HitMeForShow()">Attri Click</button>
+    <br><br><br>
+
+<!--methods To get the elements Attributes While clicking the button-->
+<!-- this will show all the pointerevent in collectionof list -->
+    <button id="btn2" class="button-one" type="button" onclick="console.log(event)">Get Event</button>
+
+    <!-- this will show the event type -->
+    <button id="btn3" class="button-one" type="button" onclick="console.log(event.type)">Get Event Type</button>
+
+    <!-- this will show you the targert elements when you click the onclick event -->
+    <button id="btn4" class="button-one" type="button" onclick="console.log(event.target)">Get Event target</button>
+
+    <!-- this also show you the current elements which is called when we click that onclick event-->
+    <button id="btn5" class="button-one" type="button" onclick="console.log(this)">Get Event this</button>
+
+    <!-- This will show you the elements Attributes value -->
+    <button id="btn6" class="button-one" type="button" onclick="console.log(this.id)">Get this.id</button>
+
+    <!-- This will show the elements attributes value -->
+    <button id="btn7" class="button-one" type="button" onclick="console.log(id)">Get  id</button>
+    <br>
+
+
+<!-- This Is a 2nd Event Methods -->
+    <p id="p1">Hello Pokesh</p>
+    <button type="button" id="pbtn">Click Paragraph</button>
+    
+    <!-- remove the eventhandler -->
+     <button type="button" id="pbtn1" type="button">Click Remove</button>
+    <br>
+    </br>
+    <br>
+    </br>
+
+<!-- addEventListener() and  removeEventListener()-->
+    <button type="button" id="Evenbtn" class="new">Add Event Listener</button>
+    <button type="button" id="removebtn">Remove Event Listener</button>
+
+
+
+
+    <script>
+// 1.Attributes Event handler
+        function HitMeForShow(){
+            console.log("Broo Did you just Hit me")
+        }
+
+        let pbtn=document.getElementById("pbtn");
+        let para=document.getElementById("p1");
+
+// 2.2nd type of event handler
+        pbtn.onclick=function(){
+            para.innerText="Hey Pokesh Somebuddy Is Calling You"
+            console.log("Hey Did you Call me Buddy")
+            console.log(event.type)
+        }
+
+        // Remove the EventHandler
+        pbtn.ondblclick="null";
+
+        // Remove the eventHandler
+        let pbtn1=document.getElementById("pbtn1");
+        pbtn1.onclick=function(){
+            console.log("You Choosed To Abort")
+            pbtn.onclick="null";
+        }
+
+// addEventListener() and  removeEventListener()
+        function addeventfun(){
+            console.log("You called A addEventListener Over Here")
+            addbtn.style.backgroundColor="green"
+            addbtn.classList.add("colorChnage")
+        }
+        function eventfun(){
+            addbtn.classList.remove("colorChnage")
+            console.log("you removed mee broo")
+        }
+
+
+     
+        let addbtn=document.getElementById("Evenbtn");
+        let removebtn=document.getElementById("removebtn");
+        // addEventListener(event,function,useCapture)
+        
+        addbtn.addEventListener('click',addeventfun);
+           // RemoveEventListener will remove the event listener which was added by add event listener
+        // addbtn.removeEventListener('click',addeventfun);
+
+        // addbtn.addEventListener('dblclick',eventfun);
+
+
+        function RemoveWhatIadded(){
+            addbtn.removeEventListener('click',addeventfun);
+        }
+     
+    
+        removebtn.addEventListener('click',RemoveWhatIadded);
+
+    
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

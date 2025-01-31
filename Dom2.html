@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .firstH2{
+            color: orangered;
+        }
+        .message{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .newone{
+            color: goldenrod;
+            text-shadow: 1px 1px 10px olive;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .newone:hover{
+            color: black;
+            cursor: pointer;
+        }
+        .nd{
+            font-size: xx-large;
+        }
+        .msg{
+            color: royalblue;
+        }
+        .newmsg{
+            font-size: 70px;
+            color: white;
+            background-color: black;
+            text-shadow: 2px 2px 3px black;
+        }
+        .newmsg-1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            cursor: pointer;
+
+        }
+        .newmsg-1:hover{
+            color: gold;
+            text-shadow: 1px 1px 1px whitesmoke;
+        }
+        .toggle-msg{
+            font-size: xx-large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: tomato;
+            color: aqua;
+            text-shadow: 2px 2px 5px white;
+        }
+    </style>
+
+    <!-- ClassName Properties -->
+    <h1 id="tit" class="firstH2 message">Hello Pokesh</h1>
+
+    <!-- ClassList Properties -->
+     <h2 id="Secondtit" class="nd msg">Hey Buddy long time no see</h2>
+     <button type="button" id="tog-btn" >Hit me broo</button>
+
+    <script>
+
+// ClassName Properties
+        let h1tag=document.getElementById("tit");
+        console.log(h1tag)
+        console.log(h1tag.className)
+
+        // ClassName Added
+        // h1tag.className="newone"; //this will override the existing class name and added new class name
+        console.log(h1tag.className)
+        console.log(h1tag)
+
+        // ClassName Added Without Overridding Existing Class by using concatenation
+        h1tag.className+=" newone";
+        console.log(h1tag)
+        
+
+// ClassList Properties
+        let buddy=document.getElementById("Secondtit");
+        console.log(buddy.classList) //this will show use a collection of classlist  properties from the html elements
+
+        // Adding new class to the html elements 
+        buddy.classList.add("newmsg");
+        console.log(buddy)
+
+        buddy.classList.add("newmsg-1");
+        console.log(buddy)
+
+        // Remove Class To the html elements 
+        buddy.classList.remove("newmsg");
+        console.log(buddy)
+
+        // Replace the class Name in html elements
+        buddy.classList.replace("newmsg-1","newmsg")
+        console.log(buddy.classList)
+
+        // Contains The Class it will check if there is a class here or not(true or false)
+        console.log(buddy.classList.contains("msg"));
+        console.log(buddy.classList.contains("newmsg-1"));
+
+        // Toggle here (if the class we give is not in the html elements then it will added that class 
+        // if the class we give in the html elements then it will remove that class from the elements) 
+        function hitmeButton(){
+            buddy.classList.toggle("toggle-msg");
+        }
+
+        let btn=document.getElementById("tog-btn");
+        btn.style.backgroundColor="black";
+        btn.style.color="white";
+        btn.style.fontWeight="bolder";
+        btn.style.borderRadius="10px";
+        btn.style.cursor="pointer";
+        btn.style.cssText+="width:10vw; height:10vh; box-shadow:1px 1px 10px 5px orange"
+
+        btn.addEventListener('click',hitmeButton);
+
+
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

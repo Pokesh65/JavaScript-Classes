@@ -20,12 +20,15 @@ else if (number > 1) {
         }
     }
 
+
     if (isPrime) {
         console.log(`${number} is a prime number`);
     } else {
         console.log(`${number} is a not prime number`);
     }
+    
 }
+
 
 // check if number is less than 1
 else {

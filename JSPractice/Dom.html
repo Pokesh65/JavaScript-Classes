@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="P1"></p>
+    <p id="P2"></p>
+    <p id="P3">Hello Im P3</p>
+    <p id="P4">Hello</p>
+    <p id="P5">Im Five</p>
+    <p id="P6"></p>
+    <p id="P7"></p>
+    <p id="P8"></p>
+
+    <script>
+        document.getElementById("P1").innerHTML="<h2>Hello Pokesh</h2>"
+        document.getElementById("P2").innerText="<a>Heyyyy</a>"
+        document.getElementById("P4").textContent=document.getElementById("P3").innerText;
+       let word=document.getElementById("P5").innerHTML
+       console.log(word)
+       document.getElementById("P6").innerHTML=word
+       
+    </script>
+</body>
+</html>

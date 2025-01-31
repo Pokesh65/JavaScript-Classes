@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <center> -->
+    <div name="form" class="form-div">
+        <div>
+            <input type="text" name="inp1" id="todo1" onchange="changetext(event.target.value)" />
+            <button onclick="addlistoftask()">Add Task</button><br>
+        </div>
+        <ul class="ul-group">   
+        </ul>
+    </div>
+
+    <!-- </center> -->
+
+    <style>
+        .form-div {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        center {
+            height: 100%;
+        }
+    </style>
+
+    <script>
+        let arr = []
+        let vari;
+        let inp=document.getElementById("todo1")
+        function changetext(e) {
+            vari = e
+            console.log(vari)
+        }
+
+        function addlistoftask() {
+            if(vari!==''){
+                arr.push(vari)
+            }
+            inp.value=''
+            vari = ""
+            for (let i = 0; i < arr.length; i++) {
+                Ptag[i].innerText = arr[i]
+            }
+            console.log(arr)
+        }
+
+        let Ptag = document.querySelectorAll(".Ptag-group>p")
+        
+        console.log(Ptag)
+        // for(let i=0;i<arr.length;i++){
+        //     Ptag[i]=arr[i]
+        // }
+    </script>
+
+
+</body>
+
+</html>

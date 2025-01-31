@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Elements</title>
+</head>
+<body>
+    <div class="parent">
+        <p class="child" id="ch">Porchelvan</p>
+        <p class="child" id="ch">Pokesh</p>
+        <p class="child" id="ch">Kalai</p>
+        <p class="child" id="ch">Adhik7</p>
+        <p class="child" id="har">Harini</p>
+    </div>
+    <div class="pokesh" name="pokesh">Hello Pokesh</div>
+    <div class="pokesh" name="pokesh">Hii Pokesh</div>
+    <div class="pokesh" name="pokesh">Good Morning</div>
+    <div class="pokesh" name="pokesh">How are you man</div>
+    <div class="poke5" name="pokesh">Are you alright</div>
+
+
+<!-- Traversing Elements In JavaScripts -->
+
+    <!-- parents Elements  -->
+    <div class="travers">
+        <p class="text">Hello Parents</p>
+    </div>
+
+    <!-- Child Elements  -->
+     <div class="ParentEle">
+        <P class="PchildEle">Hello 1</P>
+        <P class="PchildEle">Hello 2</P>
+        <P class="PchildEle">Hello 3</P>
+        <P class="PchildEle">Hello 4</P>
+        <P class="PchildEle">Hello 5</P>
+     </div>
+
+     <!-- Sibling Elements  -->
+      <div class="siblings">
+        <p>Sibling 1</p>
+        <p>Sibling 2</p>
+        <p class="sib3">Sibling 3</p>
+        <p>Sibling 4</p>
+        <p>Sibling 5</p>
+      </div>
+
+      <!-- Manipulating Elements  -->
+      <div class="manipulating">
+        <p class="mani1">Manipulating 1</p>
+        <p class="mani2">Manipulating 2</p>
+      </div>
+      <p class="maniOut" id="hel">Manipulating From OutSide</p>
+
+
+
+    
+
+    <script>
+
+        // getElementById
+        let por=document.getElementById("ch");
+        console.log(por)
+
+
+        // getElementsByName
+        let pok=document.getElementsByName("pokesh")
+        console.log(pok)
+        console.log(pok[0].innerHTML="Welcome Pokesh")
+        // pok[4].innerHTML=document.getElementById("ch").textContent
+        console.log(pok[4].textContent)
+
+
+        // getElementsByTagName
+        let tag=document.getElementsByTagName("p")
+        console.log(tag)
+        console.log(tag[0].textContent)
+        tag[0].innerHTML=document.getElementById("har").textContent
+        console.log(tag[0].textContent)
+
+        // getElementsByClassName
+        let clas=document.getElementsByClassName("pokesh");
+        console.log(clas)
+        console.log(clas[3].textContent)
+
+        //querySelector
+        // use can use css selector methods to select all tag here .poke5 #pokes div poke5
+        let qur=document.querySelector(".poke5")
+        console.log(qur)
+        console.log(qur.textContent)
+
+        // querySelectorAll
+        //  it will select all tag which has the name has pokesh
+        let qurAll=document.querySelectorAll(".pokesh")
+        console.log(qurAll)
+        console.log(qurAll[3].textContent)
+
+
+// Traversing Elements In JavaScripts
+
+        let tra=document.querySelector(".text");
+        console.log(tra.parentNode)
+        console.log(tra.parentElement)
+
+        // Child Elements 
+        let Pchild=document.querySelector(".ParentEle");
+        console.log(Pchild)
+        console.log(Pchild.firstElementChild.textContent)
+        console.log(Pchild.lastElementChild.textContent)
+
+        // Selecting Sibling Elements
+        let sib=document.querySelector(".sib3")
+        console.log(sib)
+        console.log(sib.previousElementSibling.textContent)
+        console.log(sib.nextElementSibling.textContent)
+
+
+        // Manipulating Elements
+        let maniP=document.createElement("p");
+        maniP.innerHTML="Hello new Manipulating"
+        console.log(maniP.textContent)
+
+        let ParentMani=document.querySelector(".manipulating")
+        // ParentMani.appendChild(maniP)
+        console.log(ParentMani)
+
+        document.querySelector(".mani2").before(maniP,document.getElementById("hel"));
+        document.querySelector(".mani2").after(document.getElementById("hel"))
+        console.log(ParentMani)
+
+
+        
+
+
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
